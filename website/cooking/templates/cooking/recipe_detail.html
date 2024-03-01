@@ -1,0 +1,13 @@
+{% extends 'cooking/base_template.html' %}
+
+{% block content %}
+  <h1> Name: {{ recipe.name }}</h1>
+
+  <p><strong>Name:</strong> {{ recipe.name }}</p>
+  <p><strong>Description:</strong> {{ recipe.description }}</p>
+
+
+  <a class="btn btn-primary" href="{{ recipe.get_absolute_url }}" role="button">View</a>
+  <a href="{% url 'delete_recipe' ingredient.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'update_ingredient' ingredient.id %}" class="btn btn-primary">Update</a>
+{% endblock %}
